@@ -1,0 +1,17 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css";
+body{
+ background-color: black;}
+div{
+    text-align: center;
+    align-items: left;
+}
+img{
+    width: 50%;
+    height: 50%;
+}
+p{
+    margin: 0%;
+    border: 0;
+    color: #000;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

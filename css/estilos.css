@@ -1,0 +1,27 @@
+body {
+    background-image: url(../imagenes/gatito.jpg);
+    /* background-color: grey; */
+    color: white;
+    padding-left: 250px;
+    padding-right: 250px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.alerta {
+    background-color: #F7DC6F;
+    color: red;
+    border: 1px solid red;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+}
+
+p {
+    text-align: justify;
+}
+
+.centrado {
+    text-align: center;
+}
