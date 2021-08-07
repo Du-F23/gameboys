@@ -50,13 +50,29 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+<span></span>
+<div class="conteiner">
+  <div class="card" style="width: 18rem;">
+    <span>  </span>
+    <div class="img8x">
+            <img src="img/ats_pc.jpeg" width="10" height="10"  class="d-block w-100" alt="American Truck Simulator">
+          <div class="content"> 
+            <div>
+              <h2>American Truck Simulator</h2>
+              <p>American Truck Simulator es un juego de simulador de camiones desarrollado y publicado por la empresa checa SCS Software.</p>
+              <p>Se anunció que estaba en desarrollo en septiembre de 2013 y se presentó en el E3 2015. Se lanzó el 2 de febrero de 2016 para Microsoft Windows, Linux y macOS.</p>
 
+            </div>
+          </div>
+          </div>
+        </div>
+  </div>
+</div>
       <div class="notification">
            <button class="delete"></button> 
    <strong><a href="ingresa.php">Inicia sesion</a></strong>, Si aun no tienes cuenta puedes <strong><a href="registra.php"> Registrarte gratuitamente.</a></strong>
       </div>
-
-
+</div>
       <script  src="js/bootstrap.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
       <script>document.addEventListener('DOMContentLoaded', () => {
