@@ -1,4 +1,6 @@
-
+<?php
+require_once './menu.php';
+?>
 <!DOCTYPE html>
 <html lang="es-MX">
 <head>
@@ -6,13 +8,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrate</title>
+    <link rel="shortcut icon" href="img/robot.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css"> 
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 </head>
 <body>
-<?php
-require_once './menu.php';
-?>
 <div class="container mt-3">
     <div class="row justify-content-center">
         <div class="col-6">
