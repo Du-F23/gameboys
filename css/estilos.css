@@ -1,10 +1,10 @@
 body {
-    background-image: url(../imagenes/gatito.jpg);
-    /* background-color: grey; */
-    color: white;
+    background-color: grey; 
+    color: grey;
     padding-left: 250px;
     padding-right: 250px;
     font-family: 'Raleway', sans-serif;
+    align-content: center;
 }
 
 .alerta {

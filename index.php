@@ -1,3 +1,6 @@
+<?php
+  require_once './menu.php';
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,15 +10,12 @@
     <link rel="shortcut icon" href="img/robot.svg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="/proyecto_integrador/css/bootstrap.min.css">
-    <link rel="stylesheet" href="stile.css">
+    <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
   
     <title>Document</title>    
 </head>
 <body>
-  <?php
-  require_once './menu.php';
-  ?>
    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -50,25 +50,20 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-<span></span>
-<div class="conteiner">
-  <div class="card" style="width: 18rem;">
-    <span>  </span>
-    <div class="img8x">
-            <img src="img/ats_pc.jpeg" width="10" height="10"  class="d-block w-100" alt="American Truck Simulator">
-          <div class="content"> 
-            <div>
-              <h2>American Truck Simulator</h2>
-              <p>American Truck Simulator es un juego de simulador de camiones desarrollado y publicado por la empresa checa SCS Software.</p>
+
+          <div class="card " style="width: 18rem;">
+          <img src="img/ats_pc.jpeg" width="10" height="10"  class="d-block w-100" alt="American Truck Simulator">
+  <div class="card-body">
+    <h5 class="card-title">American Truck Simulator</h5>
+    <p class="card-text">American Truck Simulator es un juego de simulador de camiones desarrollado y publicado por la empresa checa SCS Software.</p>
               <p>Se anunció que estaba en desarrollo en septiembre de 2013 y se presentó en el E3 2015. Se lanzó el 2 de febrero de 2016 para Microsoft Windows, Linux y macOS.</p>
 
-            </div>
-          </div>
-          </div>
-        </div>
+    <a href="#" class="btn btn-primary">Ir al juego</a>
   </div>
 </div>
-      <div class="notification">
+</div>
+
+      <div class="notification text-center">
            <button class="delete"></button> 
    <strong><a href="ingresa.php">Inicia sesion</a></strong>, Si aun no tienes cuenta puedes <strong><a href="registra.php"> Registrarte gratuitamente.</a></strong>
       </div>
@@ -84,9 +79,6 @@
       });
     });
   });</script>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </body>
-
-
-
 </html>
