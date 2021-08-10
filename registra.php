@@ -1,5 +1,8 @@
 <?php
 require_once './menu.php';
+//$sql="INSERT INTO `usuarios`(`id`, `nombre`, `primer_apellido`, `segundo_apellido`, `sexo`, `fecha_nacimiento`, `telefono`, `correo_electronico`, `contrasena`, `calle`, `numero_exterior`, `numero_interior`, `codigo_postal`, `estado_id`, `municipio_id`, `tipo`, `estatus`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]','[value-10]','[value-11]','[value-12]','[value-13]','[value-14]','[value-15]','[value-16]','[value-17]')";
+//$sql = $connect->prepare($sql);
+
 ?>
 <!DOCTYPE html>
 <html lang="es-MX">
@@ -25,39 +28,9 @@ require_once './menu.php';
                     <?php //echo htmlentities($accion, ENT_NOQUOTES)?>
                 </div>
                 <div class="card-body">
-                <?php
-                                require_once('vendor/autoload.php');
-                                use vendor\Validation\Validator;
-                    if ('POST' == $_SERVER['REQUEST_METHOD']){
-                        // validamos los datos
-                        $validator = new Validator;
-                        $validation = $validator->make($_POST, [
-                            'nombre' => 'required|min:4|max:45'
-                            , 'primer_apellido' => 'required|min:4|max:45'
-                            , 'segundo_apellido' => 'nullable|max:45'
-                            , 'sexo' => 'required|in:Femenino,Masculino'
-                            , 'fecha_nacimiento' => 'required|date:Y-m-d|before:yesterday'
-                            , 'numero_celular' => 'required|min:10|max:45'
-                            , 'correo_electronico' => 'required|email'
-                            , 'contrasena' => 'nullable|min:8'
-                            , 'contrasena_confirma' => 'nullable|same:contrasena'
-                            , 'perfil' => 'required|in:Administrador,Cliente'
-                            , 'estatus' => 'required|in:Activo,Inactiva'
-                        ]);
-                        $validation->setMessages([
-                            'required' => ':attribute es requerido'
-                            , 'min' => ':attribute longitud mínima no se cumple'
-                            , 'max' => ':attribute longitud máxima no se cumple'
-                        ]);
-                        // then validate
-                        $validation->validate();
-                        $errors = $validation->errors();
-                    }
-                    if ('GET' == $_SERVER['REQUEST_METHOD'] || $validation->fails()) {
-                    ?>
-                    <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="POST">
+                    <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="POST" action="registra-guarda.php">
                         <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre completo</label>
+                            <label for="nombre" class="form-label">Nombre (s)</label>
                             <input type="text" name="nombre" required class="form-control form-control-sm" id="nombre" value="<?php echo htmlentities($_POST['nombre'] ?? '') ?>">
                         </div>
                         <div class="mb-3">
@@ -65,7 +38,7 @@ require_once './menu.php';
                             <input type="text" name="primer_apellido" required class="form-control form-control-sm" id="primer_apellido" value="<?php echo htmlentities($_POST['primer_apellido'] ?? '') ?>">
                         </div>
                         <div class="mb-3">
-                            <label for="segundo_apellido" class="form-label">Primer apellido</label>
+                            <label for="segundo_apellido" class="form-label">Segundo apellido</label>
                             <input type="text" name="segundo_apellido" required class="form-control form-control-sm" id="segundo_apellido" value="<?php echo htmlentities($_POST['segundo_apellido'] ?? '') ?>">
                         </div>
                         <div class="mb-3">
@@ -100,152 +73,98 @@ require_once './menu.php';
                         
                         <div class="mb-3">
                             <label for="contrasena" class="form-label">Contraseña</label>
-                            <input type="password" name="contrasena" class="form-control form-control-sm" id="contrasena">
+                            <input type="password" name="contrasena" class="form-control form-control-sm" id="contrasena" value="<?php echo htmlentities($_POST['contrasena'] ?? '') ?>">
                         </div>
                         <div class="mb-3">
                             <label for="contrasena_confirma" class="form-label">Contraseña (confirma)</label>
                             <input type="password" name="contrasena_confirma" class="form-control form-control-sm" id="contrasena_confirma">
                         </div>
                         <div class="mb-3">
+                            <label for="calle" class="form-label">Calle</label>
+                            <input type="text" name="calle" required class="form-control form-control-sm" id="calle" value="<?php echo htmlentities($_POST['calle'] ?? '') ?>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="numero_exterior" class="form-label">Numero Exterior</label>
+                            <input type="text" name="numero_exterior" required class="form-control form-control-sm" id="numero_exterior" value="<?php echo htmlentities($_POST['numero_exterior'] ?? '') ?>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="numero_interior" class="form-label">Numero Interior</label>
+                            <input type="text" name="numero_interior" required class="form-control form-control-sm" id="numero_interior" value="<?php echo htmlentities($_POST['numero_interior'] ?? '') ?>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="codigo_postal" class="form-label">Codigo Postal</label>
+                            <input type="text" name="codigo_postal" required class="form-control form-control-sm" id="codigo_postal" value="<?php echo htmlentities($_POST['codigo_postal'] ?? '') ?>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="estado_id" class="form-label">Selecciona estado</label>
+                            <select name="estado_id" id="estado_id" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                <option selected value="">Selecciona</option>
+
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="municipio_id" class="form-label">Selecciona municipio</label>
+                            <select name="municipio_id" id="municipio_id" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                <option selected value="">Selecciona primero un estado</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
                             <label for="perfil1" class="form-label">Perfil</label>
                             <div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="perfil" id="perfil1" value="Administrador" <?php echo 'Administrador' == ($_POST['perfil'] ?? '') ? 'checked' : '' ?>>
+                                    <input class="form-check-input" type="radio" name="perfil" id="perfil1" value="Usuario" <?php echo 'Usuario' == ($_POST['Perfil'] ?? '') ? 'checked' : '' ?>>
                                     <label class="form-check-label" for="perfil1">
-                                        Administrador
+                                        Usuario 
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="perfil" id="perfil2" value="Cliente" <?php echo 'Cliente' == ($_POST['perfil'] ?? '') ? 'checked' : '' ?>>
+                                    <input class="form-check-input" type="radio" name="perfil" id="perfil2" value="Empleado" <?php echo 'Empleado' == ($_POST['Perfil'] ?? '') ? 'checked' : '' ?>>
                                     <label class="form-check-label" for="perfil2">
-                                        Cliente
+                                        Empleado
                                     </label>
                                 </div>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="estatus1" class="form-label">Estatus</label>
+                            <label for="estatus" class="form-label">Estatus</label>
                             <div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="estatus" id="estatus1" value="Activo" <?php echo 'Activo' == ($_POST['estatus'] ?? '') ? 'checked' : '' ?>>
+                                <input class="form-check-input" type="radio" name="estatus" id="estatus1" value="Activo" <?php echo 'Activo' == ($_POST['estatus'] ?? '') ? 'checked' : '' ?>>
                                     <label class="form-check-label" for="estatus1">
                                         Activo
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="estatus" id="estatus2" value="Inactiva" <?php echo 'Inactiva' == ($_POST['estatus'] ?? '') ? 'checked' : '' ?>>
+                                    <input class="form-check-input" type="radio" name="estatus" id="estatus2" value="Inactivo" <?php echo 'Inactivo' == ($_POST['estatus'] ?? '') ? 'checked' : '' ?>>
                                     <label class="form-check-label" for="estatus2">
-                                        Inactiva
+                                        Inactivo
                                     </label>
                                 </div>
                             </div>
                         </div>
+                        </div>
                         <button type="submit" class="btn btn-primary">guardar</button>
                     </form>
-                    <?php
-
-
-                } else {
-                        // es post y todo está bien
-                        if (isset($_GET['id']) && is_numeric($_GET['id'])) {
-                            //actualizamos
-                            $sql = <<<fin
-update usuarios set
-    nombre = :nombre
-    , primer_apellido = :primer_apellido
-    , segundo_apellido = :segundo_apellido
-    , sexo = :sexo
-    , fecha_nacimiento = :fecha_nacimiento
-    , numero_celular = :numero_celular
-    , correo_electronico = :correo_electronico
-    , contrasena = :contrasena
-    , perfil = :perfil
-    , estatus = :estatus
-where
-    id = :id
-fin;
-                            // ¿cambiar contraseña?
-                            if(!$errors->has('contrasena') && !$errors->has('contrasena_confirma') && !empty($_POST['contrasena'])) {
-                                $opciones = [
-                                    'cost' => 12,
-                                ];
-                                $contrasena = password_hash($_POST['contrasena'], PASSWORD_BCRYPT, $opciones);
-                            } else {
-                                // dejamos la misma contraseña
-                                $sentencia = $conexion->prepare('select contrasena from usuarios where id = :id');
-                                $sentencia->bindValue(':id', $_GET['id'], PDO::PARAM_INT);
-                                $sentencia->execute();
-                                $contrasena = $sentencia->fetchColumn(0);
-                            }
-                            $sentencia = $conexion->prepare($sql);
-                            $sentencia->bindValue(':nombre', $_POST['nombre'], PDO::PARAM_STR);
-                            $sentencia->bindValue(':primer_apellido', $_POST['primer_apellido'], PDO::PARAM_STR);
-                            $sentencia->bindValue(':segundo_apellido', $_POST['segundo_apellido'], PDO::PARAM_STR);
-                            $sentencia->bindValue(':sexo', $_POST['sexo'], PDO::PARAM_STR);
-                            $sentencia->bindValue(':fecha_nacimiento', $_POST['fecha_nacimiento'], PDO::PARAM_STR);
-                            $sentencia->bindValue(':numero_celular', $_POST['numero_celular'], PDO::PARAM_STR);
-                            $sentencia->bindValue(':correo_electronico', $_POST['correo_electronico'], PDO::PARAM_STR);
-                            $sentencia->bindValue(':contrasena', $contrasena, PDO::PARAM_STR);
-                            $sentencia->bindValue(':perfil', $_POST['perfil'], PDO::PARAM_STR);
-                            $sentencia->bindValue(':estatus', $_POST['estatus'], PDO::PARAM_STR);
-                            $sentencia->bindValue(':id', $_GET['id'], PDO::PARAM_INT);
-                            $sentencia->execute();
-                            echo '<h6>Usuario actualizado</h6>';
-                            echo '<div><a href="usuarios.php" class="btn btn-secondary btn-sm">usuarios</a></div>';
-                        } else {
-                            //creamos
-                            $sql = <<<fin
-insert into usuarios (
-    nombre
-    , primer_apellido
-    , segundo_apellido
-    , sexo
-    , fecha_nacimiento
-    , numero_celular
-    , correo_electronico
-    , contrasena
-    , perfil
-    , estatus
-) values (
-    :nombre
-    , :primer_apellido
-    , :segundo_apellido
-    , :sexo
-    , :fecha_nacimiento
-    , :numero_celular
-    , :correo_electronico
-    , :contrasena
-    , :perfil
-    , :estatus
-)
-fin;
-                            // Encriptamos la contraseña
-                            $opciones = [
-                                'cost' => 12,
-                            ];
-                            $contrasena = password_hash($_POST['contrasena'], PASSWORD_BCRYPT, $opciones);
-                            $sentencia = $conexion->prepare($sql);
-                            $sentencia->bindValue(':nombre', $_POST['nombre'], PDO::PARAM_STR);
-                            $sentencia->bindValue(':primer_apellido', $_POST['primer_apellido'], PDO::PARAM_STR);
-                            $sentencia->bindValue(':segundo_apellido', $_POST['segundo_apellido'], PDO::PARAM_STR);
-                            $sentencia->bindValue(':sexo', $_POST['sexo'], PDO::PARAM_STR);
-                            $sentencia->bindValue(':fecha_nacimiento', $_POST['fecha_nacimiento'], PDO::PARAM_STR);
-                            $sentencia->bindValue(':numero_celular', $_POST['numero_celular'], PDO::PARAM_STR);
-                            $sentencia->bindValue(':correo_electronico', $_POST['correo_electronico'], PDO::PARAM_STR);
-                            $sentencia->bindValue(':contrasena', $contrasena, PDO::PARAM_STR);
-                            $sentencia->bindValue(':perfil', $_POST['perfil'], PDO::PARAM_STR);
-                            $sentencia->bindValue(':estatus', $_POST['estatus'], PDO::PARAM_STR);
-                            $sentencia->execute();
-                            echo '<h6>Usuario creado</h6>';
-                            echo '<div><a href="usuario.php" class="btn btn-secondary btn-sm">usuarios</a></div>';
-                        }
-                    }
-                    ?>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <script src="js/bootstrap.min.js"></script>
+<script>
+$(function(){
+    $('#estado').change(function() {
+        $.getJSON('municipios.php', {estado_id:$(this).val()}, function(data, textStatus, jqXHR) {
+            // console.log(data.data);
+            var municipios = $('#municipio');
+            municipios.html('<option value="">Selecciona</option>')
+            data.data.forEach(function (v, i) {
+                // console.log(v);
+                municipios.append(new Option(v['municipio'], v['id']));
+            });
+        });
+    });
+});
+</script>
 </body>
 </html>

@@ -26,19 +26,19 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="img/among_us.jpeg" class="d-block w-100" alt="Among us">
+            <img src="img/among_us.jpg" class="d-block w-100" alt="Among us">
           </div>
           <div class="carousel-item">
-            <img src="img/ats_pc.jpeg" class="d-block w-100" alt="American Truck Simulator">
+            <img src="img/ats_pc.jpg" class="d-block w-100" alt="American Truck Simulator">
           </div>
           <div class="carousel-item">
-            <img src="img/call_of_duty_warzone.jpg" class="d-block w-100" alt="Call Of Duty Warzone">
+            <img src="img/warzone.jpg" class="d-block w-100" alt="Call Of Duty Warzone">
           </div>
           <div class="carousel-item">
-            <img src="img/gta_v.jpeg" class="d-block w-100" alt="Grand Theft Auto V">
+            <img src="img/gta_v.jpg" class="d-block w-100" alt="Grand Theft Auto V">
           </div>
           <div class="carousel-item">
-            <img src="img/halo.jpeg" class="d-block w-100" alt="Halo 5">
+            <img src="img/halo.jpg" class="d-block w-100" alt="Halo 5">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -54,40 +54,40 @@
       <div class="row row-cols-1 row-cols-md-3 g-4">
   <div class="col">
     <div class="card h-100">
-    <img src="img/ats_pc.jpeg" width="10" height="10"  class="d-block w-100" alt="American Truck Simulator"> 
+    <img src="img/ats_banner.png" width="10" height="10"  class="d-block w-100" alt="American Truck Simulator"> 
       <div class="card-body">
       <h5 class="card-title">American Truck Simulator</h5>
     <p class="card-text">American Truck Simulator es un juego de simulador de camiones desarrollado y publicado por la empresa checa SCS Software.</p>
               <p>Se anunció que estaba en desarrollo en septiembre de 2013 y se presentó en el E3 2015. Se lanzó el 2 de febrero de 2016 para Microsoft Windows, Linux y macOS.</p>
       </div>
       <div class="card-footer">
-      <a href="#" class="btn btn-primary">Ir al juego</a>
+      <a href="src/american_truck.php" class="btn btn-primary">Ir al juego</a>
       </div>
     </div>
   </div>
   <div class="col">
     <div class="card h-100">
-    <img src="img/among_us.jpeg" class="d-block w-100" alt="Among us">
+    <img src="img/au_banner.jpg" class="d-block w-100" alt="Among us">
       <div class="card-body">
         <h5 class="card-title">Among Us</h5>
         <p class="card-text">Among Us es un juego de deducción social multijugador en línea de 2018 desarrollado y publicado por el estudio de juegos estadounidense Innersloth. </p>
         <p>Se lanzó en dispositivos iOS y Android en junio de 2018 y en Windows en noviembre de 2018, con juego multiplataforma entre estas plataformas.</p>
       </div>
       <div class="card-footer">
-      <a href="#" class="btn btn-primary">Ir al juego</a>
+      <a href="src/amongus.php" class="btn btn-primary">Ir al juego</a>
       </div>
     </div>
   </div>
   <div class="col">
     <div class="card h-100">
-    <img src="img/call_of_duty_warzone.jpg" class="d-block w-100" alt="Call Of Duty Warzone">
+    <img src="img/warzone_banner.jpg" class="d-block w-100" alt="Call Of Duty Warzone">
       <div class="card-body">
         <h5 class="card-title">Call of Duty: Warzone</h5>
         <p class="card-text">Call of Duty: Warzone es un videojuego de Battle Royale gratuito lanzado el 10 de marzo de 2020 para PlayStation 4, Xbox One, Microsoft Windows, PlayStation 5 y Xbox Series X / S. </p>
         <p>El juego es parte de Call of Duty: Modern Warfare de 2019 y está conectado a Call of Duty: Black Ops: Cold War de 2020 y se presentó durante la temporada 2 del contenido de Modern Warfare.</p>
       </div>
       <div class="card-footer">
-      <a href="#" class="btn btn-primary">Ir al juego</a>
+      <a href="src/warzone.php" class="btn btn-primary">Ir al juego</a>
       </div>
     </div>
   </div>
@@ -96,14 +96,14 @@
 <div class="row row-cols-1 row-cols-md-3 g-4">
   <div class="col">
     <div class="card h-100">
-    <img src="img/gta_v.jpeg" class="d-block w-100" alt="Grand Theft Auto V">
+    <img src="img/gta_banner.jpg" class="d-block w-100" alt="Grand Theft Auto V">
       <div class="card-body">
       <h5 class="card-title">Grand Theft Auto V</h5>
     <p class="card-text">Grand Theft Auto V es un juego de acción y aventuras de 2013 desarrollado por Rockstar North y publicado por Rockstar Games.</p>
     <p>Es la primera entrada principal de la serie Grand Theft Auto desde Grand Theft Auto IV de 2008.</p>
       </div>
       <div class="card-footer">
-      <a href="#" class="btn btn-primary">Ir al juego</a>
+      <a href="src/gtav.php" class="btn btn-primary">Ir al juego</a>
       </div>
     </div>
   </div>
@@ -116,7 +116,7 @@
         <p>La quinta entrada principal y la décima en general en la serie Halo, se lanzó en todo el mundo el 27 de octubre de 2015.</p>
       </div>
       <div class="card-footer">
-      <a href="#" class="btn btn-primary">Ir al juego</a>
+      <a href="src/halo5.php" class="btn btn-primary">Ir al juego</a>
       </div>
     </div>
   </div>
@@ -129,7 +129,7 @@
         <p>El juego se lanzó por primera vez para Microsoft Windows y PlayStation 4 en julio de 2015, y los puertos para Xbox One y Nintendo Switch se lanzarán más adelante.</p>
       </div>
       <div class="card-footer">
-      <a href="#" class="btn btn-primary">Ir al juego</a>
+      <a href="src/rocket.php" class="btn btn-primary">Ir al juego</a>
       </div>
     </div>
   </div>
