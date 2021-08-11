@@ -1,8 +1,53 @@
 <?php
 require_once './menu.php';
-//$sql="INSERT INTO `usuarios`(`id`, `nombre`, `primer_apellido`, `segundo_apellido`, `sexo`, `fecha_nacimiento`, `telefono`, `correo_electronico`, `contrasena`, `calle`, `numero_exterior`, `numero_interior`, `codigo_postal`, `estado_id`, `municipio_id`, `tipo`, `estatus`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]','[value-10]','[value-11]','[value-12]','[value-13]','[value-14]','[value-15]','[value-16]','[value-17]')";
-require './conexion.php';
+$servername = "localhost";
+$database = "gba";
+$username = "root";
+$password = "Fernando13.1";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $database);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+mysqli_close($conn);
 ?>
+
+<?php
+                require './conexion.php';
+
+                $message = '';
+
+                if (!empty($_POST['correo_electronico']) && !empty($_POST['contrasena'])) {
+            
+            $stmt = $conn -> prepare($sql);
+            $sql= "INSERT INTO usuarios (id, nombre, primer_apellido, segundo_apellido, sexo, fecha_nacimiento, telefono, correo_electronico, contrasena, calle, numero_exterior, numero_interior, codigo_postal, estado_id, municipio_id, tipo, estatus) VALUES (:nombre, :primer_apellido, :segundo_apellido, :sexo, :fecha_nacimiento, :numero_celular, :correo_electronico, :contrasena,:calle, :numero_exterior, :numero_interior, :codigo_postal, :estado, :municipio, :perfil, :estatus)";
+            $stmt->bindParam(':nombre', $_POST['nombre']);
+            $stmt->bindParam(':primer_apellido', $_POST['primer_apellido']);
+            $stmt->bindParam(':segundo_apellido', $_POST['segundo_apellido']);
+            $stmt->bindParam(':sexo', $_POST['sexo']);
+            $stmt->bindParam(':fecha_nacimiento', $_POST['fecha_nacimiento']);
+            $stmt->bindParam(':numero_celular', $_POST['numero_celular']);
+            $stmt->bindParam(':correo_electronico', $_POST['correo_electronico']);
+            $password = password_hash($_POST['contrasena'], PASSWORD_BCRYPT);
+            $stmt->bindParam(':contrasena', $password);
+            $stmt->bindParam(':calle', $_POST['calle']);
+            $stmt->bindParam(':numero_exterior ', $_POST['numero_exterior']);
+            $stmt->bindParam(':numero_interior', $_POST['numero_interior']);
+            $stmt->bindParam(':codigo_postal', $_POST['codigo_postal']);
+            $stmt->bindParam(':estado', $_POST['estado']);
+            $stmt->bindParam(':municipio', $_POST['municipio']);
+            $stmt->bindParam(':perfil', $_POST['perfil']);
+            $stmt->bindParam(':estatus', $_POST['estatus']);
+
+            if ($stmt->execute()) {
+                $message = 'Se han guardado correctamente los usuarios';
+              } else {
+                $message = 'Hemos tenido un error al guardar sus datos, lo sentimos';
+              }
+            }
+          ?>
 
 <!DOCTYPE html>
 <html lang="es-MX">
@@ -25,7 +70,9 @@ require './conexion.php';
             <div class="card">
                 <div class="card-header">
                     <i class="bi-person-circle"></i> 
- 
+                    <?php if(!empty($message)): ?>
+      <p> <?= $message ?></p>
+    <?php endif; ?>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="registra.php">

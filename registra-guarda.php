@@ -18,38 +18,38 @@
                 </div>
                 <div class="card-body">
                 <?php
-                include './conexion.php';
+                require './conexion.php';
 
-$nombre = $_POST['nombre'];
-$primer_apellido = $_POST['primer_apellido'];
-$segundo_apellido = $_POST['segundo_apellido'];
-$sexo = $_POST['sexo'];
-$fecha_nacimiento =$_POST['fecha_nacimiento'];
-$numero_celular = $_POST['numero_celular'];
-$correo_electronico =$_POST['correo_electronico'];
-$contrasena = $_POST['contrasena'];
-$calle = $_POST['calle'];
-$numero_exterior = $_POST['numero_exterior'];
-$numero_interior = $_POST['numero_interior'];
-$codigo_postal = $_POST['codigo_postal'];
-$estado = $_POST['estado'];
-$municipio = $_POST['municipio'];
-$perfil = $_POST['perfil'];
-$estatus = $_POST['estatus'];
-// The password_hash() function convert the password in a hash before send it to the database
-$passHash = password_hash($contrasena, PASSWORD_DEFAULT);
+                $message = '';
 
-// Query to send Name, Email and Password hash to the database
-$query = "INSERT INTO `usuarios`(`id`, `nombre`, `primer_apellido`, `segundo_apellido`, `sexo`, `fecha_nacimiento`, `telefono`, `correo_electronico`, `contrasena`, `calle`, `numero_exterior`, `numero_interior`, `codigo_postal`, `estado_id`, `municipio_id`, `tipo`, `estatus`) VALUES (''$nombre','$primer_apellido','$segundo_apellido','$sexo','$fecha_nacimiento','$numero_celular','$correo_electronico','$contrasena','$calle','$numero_exterior','$numero_interior','$codigo_postal','$estado','$municipio','$perfil','$estatus')";
+                if (!empty($_POST['email']) && !empty($_POST['password'])) {
+            $sql= "INSERT INTO `usuarios`(`id`, `nombre`, `primer_apellido`, `segundo_apellido`, `sexo`, `fecha_nacimiento`, `telefono`, `correo_electronico`, `contrasena`, `calle`, `numero_exterior`, `numero_interior`, `codigo_postal`, `estado_id`, `municipio_id`, `tipo`, `estatus`) VALUES (''$nombre','$primer_apellido','$segundo_apellido','$sexo','$fecha_nacimiento','$numero_celular','$correo_electronico','$contrasena','$calle','$numero_exterior','$numero_interior','$codigo_postal','$estado','$municipio','$perfil','$estatus')";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':nombre' = $_POST['nombre']);
+            $stmt->bindParam(':primer_apellido' = $_POST['primer_apellido']),};
+            $stmt->bindParam(':segundo_apellido' = $_POST['segundo_apellido']);
+            $stmt->bindParam(':sexo' = $_POST['sexo']);
+            $stmt->bindParam(':fecha_nacimiento' =$_POST['fecha_nacimiento']);
+            $stmt->bindParam(':numero_celular' = $_POST['numero_celular']);
+            $stmt->bindParam(':correo_electronico' =$_POST['correo_electronico']);
+            $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+            $stmt->bindParam(':contrasena' = $password);
+            $stmt->bindParam(':calle' = $_POST['calle']);
+            $stmt->bindParam(':numero_exterior '= $_POST['numero_exterior']);
+            $stmt->bindParam(':numero_interior' = $_POST['numero_interior']);
+            $stmt->bindParam(':codigo_postal' = $_POST['codigo_postal']);
+            $stmt->bindParam(':estado' = $_POST['estado']);
+            $stmt->bindParam(':municipio' = $_POST['municipio']);
+            $stmt->bindParam(':perfil' = $_POST['perfil']);
+            $stmt->bindParam(':estatus' = $_POST['estatus']);
 
-if (mysqli_query($conn, $query)) {
-    echo "<div class='alert alert-success mt-4' role='alert'><h3>Your account has been created.</h3>
-    <a class='btn btn-outline-primary' href='login.html' role='button'>Login</a></div>";		
-    } else {
-        echo "Error: " . $query . "<br>" . mysqli_error($conn);
-    }	
-mysqli_close($conn);
-?>
+            if ($stmt->execute()) {
+                $message = 'Successfully created new user';
+              } else {
+                $message = 'Sorry there must have been an issue creating your account';
+              }
+            }
+          ?>
 </div>
                 </div>
             </div>
