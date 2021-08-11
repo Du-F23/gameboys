@@ -1,9 +1,9 @@
 <?php
 require_once './menu.php';
 //$sql="INSERT INTO `usuarios`(`id`, `nombre`, `primer_apellido`, `segundo_apellido`, `sexo`, `fecha_nacimiento`, `telefono`, `correo_electronico`, `contrasena`, `calle`, `numero_exterior`, `numero_interior`, `codigo_postal`, `estado_id`, `municipio_id`, `tipo`, `estatus`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]','[value-10]','[value-11]','[value-12]','[value-13]','[value-14]','[value-15]','[value-16]','[value-17]')";
-//$sql = $connect->prepare($sql);
-
+require './conexion.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="es-MX">
 <head>
@@ -25,10 +25,10 @@ require_once './menu.php';
             <div class="card">
                 <div class="card-header">
                     <i class="bi-person-circle"></i> 
-                    <?php //echo htmlentities($accion, ENT_NOQUOTES)?>
+ 
                 </div>
                 <div class="card-body">
-                    <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="POST" action="registra-guarda.php">
+                    <form method="POST" action="registra.php">
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre (s)</label>
                             <input type="text" name="nombre" required class="form-control form-control-sm" id="nombre" value="<?php echo htmlentities($_POST['nombre'] ?? '') ?>">
@@ -143,6 +143,7 @@ require_once './menu.php';
                             </div>
                         </div>
                         </div>
+
                         <button type="submit" class="btn btn-primary">guardar</button>
                     </form>
                 </div>

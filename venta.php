@@ -1,6 +1,5 @@
 <?php
 require './menu.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +19,6 @@ require './menu.php';
 <body>
 
 
-<h2>Todos nuestros juegos son recividos y valorados miniciosamente para poder satisfacer tus necesidades</h2>
 <div class="notification text-center">
   <button class="delete"></button> 
 Si deseas <strong><a href="comprar.php">Comprar</a></strong>, o si bien lo deseas puedes <strong><a href="registra-juego.php"> Intercambiar algun juego</a></strong>
