@@ -25,23 +25,23 @@
                 if (!empty($_POST['email']) && !empty($_POST['password'])) {
             $sql= "INSERT INTO `usuarios`(`id`, `nombre`, `primer_apellido`, `segundo_apellido`, `sexo`, `fecha_nacimiento`, `telefono`, `correo_electronico`, `contrasena`, `calle`, `numero_exterior`, `numero_interior`, `codigo_postal`, `estado_id`, `municipio_id`, `tipo`, `estatus`) VALUES (''$nombre','$primer_apellido','$segundo_apellido','$sexo','$fecha_nacimiento','$numero_celular','$correo_electronico','$contrasena','$calle','$numero_exterior','$numero_interior','$codigo_postal','$estado','$municipio','$perfil','$estatus')";
             $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':nombre' = $_POST['nombre']);
-            $stmt->bindParam(':primer_apellido' = $_POST['primer_apellido']),};
-            $stmt->bindParam(':segundo_apellido' = $_POST['segundo_apellido']);
-            $stmt->bindParam(':sexo' = $_POST['sexo']);
-            $stmt->bindParam(':fecha_nacimiento' =$_POST['fecha_nacimiento']);
-            $stmt->bindParam(':numero_celular' = $_POST['numero_celular']);
-            $stmt->bindParam(':correo_electronico' =$_POST['correo_electronico']);
-            $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-            $stmt->bindParam(':contrasena' = $password);
-            $stmt->bindParam(':calle' = $_POST['calle']);
-            $stmt->bindParam(':numero_exterior '= $_POST['numero_exterior']);
-            $stmt->bindParam(':numero_interior' = $_POST['numero_interior']);
-            $stmt->bindParam(':codigo_postal' = $_POST['codigo_postal']);
-            $stmt->bindParam(':estado' = $_POST['estado']);
-            $stmt->bindParam(':municipio' = $_POST['municipio']);
-            $stmt->bindParam(':perfil' = $_POST['perfil']);
-            $stmt->bindParam(':estatus' = $_POST['estatus']);
+            $stmt->bindParam(':nombre', $_POST['nombre']);
+            $stmt->bindParam(':primer_apellido', $_POST['primer_apellido']);
+            $stmt->bindParam(':segundo_apellido', $_POST['segundo_apellido']);
+            $stmt->bindParam(':sexo', $_POST['sexo']);
+            $stmt->bindParam(':fecha_nacimiento', $_POST['fecha_nacimiento']);
+            $stmt->bindParam(':numero_celular', $_POST['numero_celular']);
+            $stmt->bindParam(':correo_electronico', $_POST['correo_electronico']);
+            $password = password_hash($_POST['contrasena'], PASSWORD_BCRYPT);
+            $stmt->bindParam(':contrasena', $password);
+            $stmt->bindParam(':calle', $_POST['calle']);
+            $stmt->bindParam(':numero_exterior ', $_POST['numero_exterior']);
+            $stmt->bindParam(':numero_interior', $_POST['numero_interior']);
+            $stmt->bindParam(':codigo_postal', $_POST['codigo_postal']);
+            $stmt->bindParam(':estado', $_POST['estado']);
+            $stmt->bindParam(':municipio', $_POST['municipio']);
+            $stmt->bindParam(':perfil', $_POST['perfil']);
+            $stmt->bindParam(':estatus', $_POST['estatus']);
 
             if ($stmt->execute()) {
                 $message = 'Successfully created new user';
