@@ -9,7 +9,7 @@ require_once './menu.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
-      href="proyecto_integrador/img/robot.svg"
+      href="proyecto_integrador/robot.svg"
       type="image/x-icon"
     />
     <link
@@ -28,24 +28,17 @@ require_once './menu.php';
       integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
       crossorigin="anonymous"
     />
-    <title>American Truck Simulator</title>
+    <title>Among Us</title>
   </head>
   <body>
-    <img
-      src="/proyecto_integrador/img/ats_pc.jpeg"
-      class="img-fluid"
-      alt="American Truck Simulator"
-    />
+  <img src="/proyecto_integrador/img/AU2.jpg" class="img-fluid" alt="truck" >
     <div class="card-body">
-      <h5 class="card-title">American Truck Simulator</h5>
+      <h5 class="card-title">Among us</h5>
       <p class="card-text">
-        American Truck Simulator es un juego de simulador de camiones
-        desarrollado y publicado por la empresa checa SCS Software.
+      Among Us​ es un videojuego de género party, consiste en un multijugador de roles. Impostor-Tripulante
       </p>
       <p>
-        Se anunció que estaba en desarrollo en septiembre de 2013 y se presentó
-        en el E3 2015. Se lanzó el 2 de febrero de 2016 para Microsoft Windows,
-        Linux y macOS.
+      desarrollado por la compañía estadounidense InnerSloth y distribuido entre junio y noviembre de 2018 para las plataformas Android, iOS y PC
       </p>
     </div>
     <div class="notification text-center">

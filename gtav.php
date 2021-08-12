@@ -28,24 +28,21 @@ require_once './menu.php';
       integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
       crossorigin="anonymous"
     />
-    <title>American Truck Simulator</title>
+    <title>GTA V</title>
   </head>
   <body>
     <img
-      src="/proyecto_integrador/img/ats_pc.jpeg"
+      src="/proyecto_integrador/GTA2.jpg"
       class="img-fluid"
-      alt="American Truck Simulator"
+      alt="gtav"
     />
     <div class="card-body">
-      <h5 class="card-title">American Truck Simulator</h5>
+      <h5 class="card-title">Gran Theft Auto 5</h5>
       <p class="card-text">
-        American Truck Simulator es un juego de simulador de camiones
-        desarrollado y publicado por la empresa checa SCS Software.
+      Grand Theft Auto V es un videojuego de acción-aventura de mundo abierto desarrollado por el estudio Rockstar North
       </p>
       <p>
-        Se anunció que estaba en desarrollo en septiembre de 2013 y se presentó
-        en el E3 2015. Se lanzó el 2 de febrero de 2016 para Microsoft Windows,
-        Linux y macOS.
+      distribuido por Rockstar Games. Fue lanzado el 17 de septiembre de 2013 para las consolas PlayStation 3 y Xbox 360.​ Wikipedia
       </p>
     </div>
     <div class="notification text-center">

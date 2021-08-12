@@ -28,24 +28,21 @@ require_once './menu.php';
       integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
       crossorigin="anonymous"
     />
-    <title>American Truck Simulator</title>
+    <title>Rocket League</title>
   </head>
   <body>
     <img
-      src="/proyecto_integrador/img/ats_pc.jpeg"
+      src="/proyecto_integrador/img/RL.jpg"
       class="img-fluid"
-      alt="American Truck Simulator"
+      alt="RL"
     />
     <div class="card-body">
-      <h5 class="card-title">American Truck Simulator</h5>
+      <h5 class="card-title">Rocket League</h5>
       <p class="card-text">
-        American Truck Simulator es un juego de simulador de camiones
-        desarrollado y publicado por la empresa checa SCS Software.
+      Rocket League es un videojuego que combina el fútbol con los vehículos. Fue desarrollado por Psyonix y lanzado el 7 de julio de 2015
       </p>
       <p>
-        Se anunció que estaba en desarrollo en septiembre de 2013 y se presentó
-        en el E3 2015. Se lanzó el 2 de febrero de 2016 para Microsoft Windows,
-        Linux y macOS.
+      Fue lanzado Free to play en septiembre de 2020. Se encuentra disponible en español, y tiene modos de juego cooperativo de un jugador y en línea
       </p>
     </div>
     <div class="notification text-center">

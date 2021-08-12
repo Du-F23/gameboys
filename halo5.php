@@ -28,24 +28,21 @@ require_once './menu.php';
       integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
       crossorigin="anonymous"
     />
-    <title>American Truck Simulator</title>
+    <title>Halo 5</title>
   </head>
   <body>
     <img
-      src="/proyecto_integrador/img/ats_pc.jpeg"
+      src="/proyecto_integrador/img/HALO2.jpg"
       class="img-fluid"
-      alt="American Truck Simulator"
+      alt="halo"
     />
     <div class="card-body">
-      <h5 class="card-title">American Truck Simulator</h5>
+      <h5 class="card-title">Halo 5</h5>
       <p class="card-text">
-        American Truck Simulator es un juego de simulador de camiones
-        desarrollado y publicado por la empresa checa SCS Software.
+      Halo 5 Guardians es un videojuego de disparos en primera persona de la popular saga de videojuegos Halo exclusivo para la consola Xbox One
       </p>
       <p>
-        Se anunció que estaba en desarrollo en septiembre de 2013 y se presentó
-        en el E3 2015. Se lanzó el 2 de febrero de 2016 para Microsoft Windows,
-        Linux y macOS.
+      Salió el 27 de octubre de 2015 desarrollado por 343 Industries y publicado por Microsoft Studios. El juego sigue la línea argumental de Halo 4.
       </p>
     </div>
     <div class="notification text-center">

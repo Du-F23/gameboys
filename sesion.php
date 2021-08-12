@@ -1,10 +1,9 @@
 <?php
 require_once('vendor/autoload.php');
-use Rakit\Validation\Validator;
 // ¿se intenta iniciar sesión y los parámetros se han proporcionado?
 if ('POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['correo_electronico']) && isset($_POST['contrasena'])) {
     require_once './conexion.php';
-    $sql = 'select id, nombre, correo_electronico, perfil, estatus, password from usuarios email = :email and estatus = \'Activo\'';
+    $sql = 'select id, nombre, correo_electronico, perfil, estatus, contrasena from usuarios where correo_electronico = :correo_electronico and estatus = \'Activo\'';
     $sentencia = $conexion->prepare($sql);
     $sentencia->bindValue(':correo_electronico', $_POST['correo_electronico'], PDO::PARAM_STR);
     $sentencia->execute();
@@ -14,17 +13,19 @@ if ('POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['correo_electronico']) 
         exit;
     }
     // ¿contraseña válida?
-    if (password_verify($_POST['password'], $usuario['password'])) {
+    if (password_verify($_POST['contrasena'], $usuario['contrasena'])) {
         // iniciar sesión y guardar datos
         $session_factory = new Aura\Session\SessionFactory;
         $session = $session_factory->newInstance($_COOKIE);
-        $segment = $session->getSegment('venta_renta_videojuegos');
+        $segment = $session->getSegment('gba');
         $segment->set('id', $usuario['id']);
         $segment->set('nombre', $usuario['nombre']);
-        $segment->set('email', $usuario['email']);
-        header('Location: index.html');
+        $segment->set('correo_electronico', $usuario['correo_electronico']);
+        $segment->set('perfil', $usuario['perfil']);
+        $segment->set('estatus', $usuario['estatus']);
+        header('Location: index.php');
     } else {
-        header('Location: sesion.php?mensaje=Contraseña incorrecta');
+        header('Location: index.php');
     }
     exit;
 }

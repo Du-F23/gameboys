@@ -8,6 +8,11 @@ require_once './menu.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
+      rel="shortcut icon"
+      href="proyecto_integrador/img/robot.svg"
+      type="image/x-icon"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
@@ -23,25 +28,21 @@ require_once './menu.php';
       integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
       crossorigin="anonymous"
     />
-    <link rel="shortcut icon" href="proyecto_integrador/svg/robot.svg" type="image/x-icon">
-    <title>American Truck Simulator</title>
+    <title>Call of duty warzone</title>
   </head>
   <body>
     <img
-      src="/proyecto_integrador/img/ats_pc.jpeg"
+      src="/proyecto_integrador/img/WARZONE2.jpg"
       class="img-fluid"
-      alt="American Truck Simulator"
+      alt="Warzone"
     />
     <div class="card-body">
-      <h5 class="card-title">American Truck Simulator</h5>
+      <h5 class="card-title">Call Of Duty Warzone</h5>
       <p class="card-text">
-        American Truck Simulator es un juego de simulador de camiones
-        desarrollado y publicado por la empresa checa SCS Software.
+      Call of Duty: Warzone es un videojuego de Battle Royale gratuito lanzado el 10 de marzo de 2020 para multiconsola.
       </p>
       <p>
-        Se anunció que estaba en desarrollo en septiembre de 2013 y se presentó
-        en el E3 2015. Se lanzó el 2 de febrero de 2016 para Microsoft Windows,
-        Linux y macOS.
+      El juego es parte de Call of Duty: Modern Warfare de 2019 y está conectado a Call of Duty: Black Ops: Cold War de 2020 y se presentó durante la temporada 2 del contenido de Modern Warfare.
       </p>
     </div>
     <div class="notification text-center">

@@ -61,7 +61,7 @@
               <p>Se anunció que estaba en desarrollo en septiembre de 2013 y se presentó en el E3 2015. Se lanzó el 2 de febrero de 2016 para Microsoft Windows, Linux y macOS.</p>
       </div>
       <div class="card-footer">
-      <a href="src/american_truck.php" class="btn btn-primary">Ir al juego</a>
+      <a href="american_truck.php" class="btn btn-primary">Ir al juego</a>
       </div>
     </div>
   </div>
@@ -74,7 +74,7 @@
         <p>Se lanzó en dispositivos iOS y Android en junio de 2018 y en Windows en noviembre de 2018, con juego multiplataforma entre estas plataformas.</p>
       </div>
       <div class="card-footer">
-      <a href="src/amongus.php" class="btn btn-primary">Ir al juego</a>
+      <a href="amongus.php" class="btn btn-primary">Ir al juego</a>
       </div>
     </div>
   </div>
@@ -87,7 +87,7 @@
         <p>El juego es parte de Call of Duty: Modern Warfare de 2019 y está conectado a Call of Duty: Black Ops: Cold War de 2020 y se presentó durante la temporada 2 del contenido de Modern Warfare.</p>
       </div>
       <div class="card-footer">
-      <a href="src/warzone.php" class="btn btn-primary">Ir al juego</a>
+      <a href="warzone.php" class="btn btn-primary">Ir al juego</a>
       </div>
     </div>
   </div>
@@ -103,7 +103,7 @@
     <p>Es la primera entrada principal de la serie Grand Theft Auto desde Grand Theft Auto IV de 2008.</p>
       </div>
       <div class="card-footer">
-      <a href="src/gtav.php" class="btn btn-primary">Ir al juego</a>
+      <a href="gtav.php" class="btn btn-primary">Ir al juego</a>
       </div>
     </div>
   </div>
@@ -116,7 +116,7 @@
         <p>La quinta entrada principal y la décima en general en la serie Halo, se lanzó en todo el mundo el 27 de octubre de 2015.</p>
       </div>
       <div class="card-footer">
-      <a href="src/halo5.php" class="btn btn-primary">Ir al juego</a>
+      <a href="halo5.php" class="btn btn-primary">Ir al juego</a>
       </div>
     </div>
   </div>
@@ -129,7 +129,7 @@
         <p>El juego se lanzó por primera vez para Microsoft Windows y PlayStation 4 en julio de 2015, y los puertos para Xbox One y Nintendo Switch se lanzarán más adelante.</p>
       </div>
       <div class="card-footer">
-      <a href="src/rocket.php" class="btn btn-primary">Ir al juego</a>
+      <a href="rocket.php" class="btn btn-primary">Ir al juego</a>
       </div>
     </div>
   </div>
